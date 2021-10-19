@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int
+main (void)
+{
+  FILE *output;
+  char ch;
+
+  output = popen("git", "r");
+  
+  if (!output)
+    {
+      fprintf (stderr,
+               "incorrect parameters or too many files.\n");
+      return EXIT_FAILURE;
+    }
+  
+  while( (ch=fgetc(output)) != EOF){
+    putchar(ch);
+  }
+  
+  pclose(output);
+    
+  return EXIT_SUCCESS;
+}
