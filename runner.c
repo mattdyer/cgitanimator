@@ -17,7 +17,6 @@ print_results(char commit[200]){
   strcat(command, commit);
   strcat(command, ":runner.c");
   
-  //strcpy(command, strcpy(":runner.c", strcpy("git show ", commit)));
   
   printf("\n\n\n%s\n\n", command);
   
@@ -62,27 +61,6 @@ main (void)
       
       print_results(commit);
       count = 0;
-      /*command[0] = '\0';
-      
-      fprintf(stdout, "\n commits: \n%s", commit);
-      count = 0;
-      
-      strcat(command, "git show ");
-      strcat(command, commit);
-      strcat(command, ":runner.c");
-      
-      //strcpy(command, strcpy(":runner.c", strcpy("git show ", commit)));
-      
-      printf("\n\n\n%s", command);
-      
-      fileOutput = popen(command, "r");
-      
-      while( (chinner=fgetc(fileOutput)) != EOF){
-        putchar(chinner); 
-      }
-      
-      
-      printf("\n\n\n");*/
       
     }
     
@@ -94,11 +72,7 @@ main (void)
   
   pclose(output);
   
-  print_results(commit);
-  
-  //fprintf(stdout, "\n commits: \n%s", commit);
-  //printf("\n%s", command);
-  
+  print_results(commit);  
   
   return EXIT_SUCCESS;
 }
