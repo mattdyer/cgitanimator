@@ -8,7 +8,7 @@ main (void)
   FILE *output;
   char ch;
 
-  output = popen("git", "r");
+  output = popen("git log --pretty=format:%H --follow runner.c", "r");
   
   if (!output)
     {
